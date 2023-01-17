@@ -1,23 +1,16 @@
+import { useState } from 'react';
 import './App.css';
 
 
-const Person = (props) => {
-  return (
-    <>
-      <h1>I am {props.fullName}</h1>
-      <h2>I am from {props.country}</h2>
-      <h3>I am { props.age } years old right now.</h3>
-    </>
-  );
-}
-
 const App = () => {
+
+  const [counter, setCounter] = useState(0);   /* using array disrupturing ([counter,  setCounter]) and useState hook for react state */
 
   return (
     <div className="App">
-      <Person fullName={'Victor Happy'} country={'Nigeria'} age={28} />
-      <br/>
-      <Person fullName={'Elijah Mabumabu'} country={'Zambia'} age={30} />
+      <button onClick={() => setCounter((prevCount) => prevCount - 1)}>-</button>
+      <h1>{ counter }</h1>
+      <button onClick={() => setCounter((prevCount) => prevCount + 1)}>+</button>
     </div>
   );
 }
