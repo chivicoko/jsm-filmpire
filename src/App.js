@@ -1,22 +1,23 @@
 import './App.css';
 
+
+const Person = (props) => {
+  return (
+    <>
+      <h1>I am {props.fullName}</h1>
+      <h2>I am from {props.country}</h2>
+      <h3>I am { props.age } years old right now.</h3>
+    </>
+  );
+}
+
 const App = () => {
-  const name = 'John';
-  // const name = null;
 
   return (
     <div className="App">
-      <h1>{ 2 + 3 }</h1>
-      { name ? (
-        <>                 {/* react fragment  - required for wrapping jsx code */}
-          {name}
-        </>
-      ) : (
-        <>
-          <h1>There is no name for now!</h1>
-          <h2>Please move on to next...</h2>
-        </>
-      ) }
+      <Person fullName={'Victor Happy'} country={'Nigeria'} age={28} />
+      <br/>
+      <Person fullName={'Elijah Mabumabu'} country={'Zambia'} age={30} />
     </div>
   );
 }
