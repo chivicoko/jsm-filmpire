@@ -4,7 +4,7 @@ const MovieCard = ({ movie }) => {       /* using object destructuring - '{movie
     return (
         <div className="movie">
           <div>
-            <p>Year</p>
+            <p>{movie.Year}</p>
           </div>
 
           <div>
