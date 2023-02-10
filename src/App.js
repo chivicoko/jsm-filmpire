@@ -4,9 +4,8 @@ import './App.css';
 import MovieCard from "./MovieCard.jsx";
 import SearchIcon from './search.svg';
 
-// 732938ae
 
-const API_URL = 'http://www.omdbapi.com?apikey=732938ae'
+const API_URL = `http://www.omdbapi.com?apikey=${process.env.OMDBAPI_KEY}`;
 
 const App = () => {
 
@@ -27,7 +26,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>MovieLand</h1>
+      <h1>V-Movie</h1>
 
       <div className="search">
         <input 
@@ -42,19 +41,19 @@ const App = () => {
         />
       </div>
 
-      {
-        movies?.length > 0
+      {movies?.length > 0
         ? (
-          <div className="container">
-            {movies.map((movie) => (
-              <MovieCard movie={movie} />
-            ))}
-          </div>
-        ) : (
-          <div className="empty">
-            <h2>No movies found!</h2>
-          </div>
-        )
+            <div className="container">
+              {movies.map((movie) => (
+                <MovieCard movie={movie} />
+              ))}
+            </div>
+          )
+        : (
+            <div className="empty">
+              <h2>No movies found!</h2>
+            </div>
+          )
       }
     </div>
   );
